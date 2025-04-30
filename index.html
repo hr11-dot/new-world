@@ -1,157 +1,177 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>My Portfolio</title>
-    <style>
-        /* General Reset */
-        * {
-            margin: 0;
-            padding: 0;
-            box-sizing: border-box;
-        }
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Protein Club</title>
+  <style>
+    * {
+      box-sizing: border-box;
+      margin: 0;
+      padding: 0;
+    }
 
-        body {
-            font-family: Arial, sans-serif;
-            line-height: 1.6;
-            color: #333;
-            background-color: #f4f4f4;
-            padding: 0 20px;
-        }
+    body {
+      font-family: 'Segoe UI', sans-serif;
+      background: #f9f9f9;
+      color: #222;
+    }
 
-        header {
-            background: #333;
-            color: #fff;
-            padding: 20px 0;
-            text-align: center;
-        }
+    header {
+      background: #000;
+      color: #fff;
+      padding: 2rem;
+      text-align: center;
+      position: sticky;
+      top: 0;
+      z-index: 10;
+    }
 
-        header h1 {
-            font-size: 2.5rem;
-        }
+    .logo {
+      font-size: 2rem;
+      font-weight: bold;
+      letter-spacing: 1px;
+    }
 
-        nav {
-            margin-top: 10px;
-        }
+    .slogan {
+      font-style: italic;
+      font-size: 1.2rem;
+      margin-top: 0.5rem;
+    }
 
-        nav a {
-            color: #fff;
-            text-decoration: none;
-            margin: 0 15px;
-            font-size: 1.1rem;
-        }
+    .section {
+      padding: 4rem 2rem;
+      max-width: 1200px;
+      margin: auto;
+    }
 
-        nav a:hover {
-            text-decoration: underline;
-        }
+    .section h2 {
+      font-size: 2rem;
+      margin-bottom: 1rem;
+      text-align: center;
+    }
 
-        .container {
-            max-width: 1100px;
-            margin: 20px auto;
-            overflow: hidden;
-        }
+    .hero {
+      background: url('https://images.unsplash.com/photo-1601412436969-9e62b9407d99?fit=crop&w=1600&q=80') no-repeat center center/cover;
+      height: 70vh;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      text-align: center;
+      color: white;
+      animation: fadeIn 2s ease-in;
+    }
 
-        section {
-            margin: 20px 0;
-            padding: 20px;
-            background: #fff;
-            border-radius: 10px;
-            box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
-        }
+    .hero h1 {
+      font-size: 3rem;
+      background: rgba(0, 0, 0, 0.6);
+      padding: 1rem 2rem;
+      border-radius: 10px;
+    }
 
-        .section-title {
-            margin-bottom: 15px;
-            font-size: 1.5rem;
-            border-bottom: 2px solid #333;
-            display: inline-block;
-        }
+    .features, .about, .buy {
+      animation: slideUp 1s ease-in;
+    }
 
-        .grid {
-            display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
-            gap: 20px;
-        }
+    .features-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+      gap: 2rem;
+      margin-top: 2rem;
+    }
 
-        .card {
-            background: #fff;
-            border: 1px solid #ddd;
-            border-radius: 10px;
-            box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
-            padding: 20px;
-            text-align: center;
-        }
+    .feature {
+      background: white;
+      padding: 2rem;
+      border-radius: 10px;
+      box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+    }
 
-        .card img {
-            max-width: 100%;
-            border-radius: 10px;
-            margin-bottom: 10px;
-        }
+    .feature h3 {
+      margin-bottom: 0.5rem;
+      color: #444;
+    }
 
-        footer {
-            text-align: center;
-            margin: 20px 0;
-            padding: 10px;
-            background: #333;
-            color: #fff;
-            border-radius: 10px;
-        }
+    .buy button {
+      background: #000;
+      color: #fff;
+      padding: 1rem 2rem;
+      font-size: 1rem;
+      border: none;
+      border-radius: 5px;
+      cursor: pointer;
+      transition: background 0.3s;
+    }
 
-        footer a {
-            color: #ffd700;
-            text-decoration: none;
-        }
+    .buy button:hover {
+      background: #444;
+    }
 
-        footer a:hover {
-            text-decoration: underline;
-        }
-    </style>
+    footer {
+      text-align: center;
+      padding: 2rem;
+      background: #111;
+      color: #aaa;
+    }
+
+    @keyframes fadeIn {
+      0% { opacity: 0; }
+      100% { opacity: 1; }
+    }
+
+    @keyframes slideUp {
+      0% { transform: translateY(20px); opacity: 0; }
+      100% { transform: translateY(0); opacity: 1; }
+    }
+  </style>
 </head>
 <body>
-    <header>
-        <h1>Welcome to My Portfolio</h1>
-        <nav>
-            <a href="#about">About</a>
-            <a href="#projects">Projects</a>
-            <a href="#contact">Contact</a>
-        </nav>
-    </header>
+  <header>
+    <div class="logo">Protein Club</div>
+    <div class="slogan">"Undefined / Hubris is Sin"</div>
+  </header>
 
-    <div class="container">
-        <section id="about">
-            <h2 class="section-title">About Me</h2>
-            <p>Hello! I'm a passionate developer with a knack for creating beautiful and functional web experiences. With a love for learning and problem-solving, I strive to bring innovative solutions to life.</p>
-        </section>
+  <section class="hero">
+    <h1>Fuel your body with high-performance protein</h1>
+  </section>
 
-        <section id="projects">
-            <h2 class="section-title">My Projects</h2>
-            <div class="grid">
-                <div class="card">
-                    <img src="https://m.media-amazon.com/images/I/81gsSy5r13L.png" alt="Project 1">
-                    <h3>Project 1</h3>
-                    <p>A brief description of Project 1 goes here.</p>
-                </div>
-                <div class="card">
-                    <img src="https://via.placeholder.com/300" alt="Project 2">
-                    <h3>Project 2</h3>
-                    <p>A brief description of Project 2 goes here.</p>
-                </div>
-                <div class="card">
-                    <img src="https://via.placeholder.com/300" alt="Project 3">
-                    <h3>Project 3</h3>
-                    <p>A brief description of Project 3 goes here.</p>
-                </div>
-            </div>
-        </section>
+  <section class="section about">
+    <h2>About the Product</h2>
+    <p>Protein Club is a premium plant-based protein drink made with exquisite fruits and clean ingredients. Packaged in eco-friendly glass bottles with a minimalist design, it's perfect for anyone focused on wellness, performance, and aesthetics.</p>
+  </section>
 
-        <section id="contact">
-            <h2 class="section-title">Contact Me</h2>
-            <p>Feel free to reach out via email at <a href="mailto:yourname@example.com">yourname@example.com</a> or connect with me on <a href="https://www.linkedin.com" target="_blank">LinkedIn</a>.</p>
-        </section>
+  <section class="section features">
+    <h2>Why Choose Protein Club?</h2>
+    <div class="features-grid">
+      <div class="feature">
+        <h3>Unique Flavors</h3>
+        <p>Enjoy Dragonberry Spark, Citrus Mint, and Blue Lavender—made from natural fruit infusions.</p>
+      </div>
+      <div class="feature">
+        <h3>25g Plant Protein</h3>
+        <p>Each bottle is packed with high-quality plant-based protein for optimal recovery and strength.</p>
+      </div>
+      <div class="feature">
+        <h3>Eco-Friendly</h3>
+        <p>Glass packaging, soy-based ink, and zero plastic. Good for your body and the planet.</p>
+      </div>
+      <div class="feature">
+        <h3>Minimalist Design</h3>
+        <p>Luxury-inspired look that fits seamlessly with your modern, clean lifestyle.</p>
+      </div>
     </div>
+  </section>
 
-    <footer>
-        <p>&copy; 2025 My Portfolio. Designed with ❤️ by [Your Name].</p>
-    </footer>
+  <section class="section buy">
+    <h2>Buy Now</h2>
+    <p>Available online or in select wellness shops. Bundle and subscription options available.</p>
+    <button>Shop Now</button>
+  </section>
+
+  <footer>
+    &copy; 2025 Protein Club. All rights reserved.
+  </footer>
 </body>
 </html>
+
+
